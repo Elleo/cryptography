@@ -130,7 +130,7 @@ class DartAesGcm extends AesGcm with DartAesMixin {
     );
 
     // Check MAC is correct
-    if (calculatedMac != mac) {
+    if (mac.isNotEmpty && calculatedMac != mac) {
       throw SecretBoxAuthenticationError();
     }
 
